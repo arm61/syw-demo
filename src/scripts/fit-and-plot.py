@@ -11,7 +11,7 @@ beta = X.T @ W @ y @ np.linalg.inv(X.T @ W @ X)
 intercept, gradient = beta
 
 fig, ax = plt.subplots(figsize=(6, 4))
-ax.errorbar(x, y, yerr)
+ax.errorbar(x, y, yerr, ls='', color='#5CDB94')
 ax.plot(x, gradient * x + intercept, '-', 'k')
 ax.set_ylabel('$y$')
 ax.set_xlabel('$x$')
