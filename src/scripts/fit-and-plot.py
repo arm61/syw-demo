@@ -11,8 +11,8 @@ beta = X.T @ W @ y @ np.linalg.inv(X.T @ W @ X)
 intercept, gradient = beta
 
 fig, ax = plt.subplots(figsize=(6, 4))
-ax.errorbar(x, y, yerr, 'k.')
-ax.plot(x, gradient * x + intercept, 'k-')
+ax.errorbar(x, y, yerr, marker='.', ls='', color='k')
+ax.plot(x, gradient * x + intercept, ls='-', color='#0173B2')
 ax.set_ylabel('$y$')
 ax.set_xlabel('$x$')
 fig.savefig(paths.figures / 'my_plot.pdf')
