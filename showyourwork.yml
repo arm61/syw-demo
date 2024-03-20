@@ -1,11 +1,3 @@
-# Enable rule caching on Zenodo?
-cache_on_zenodo: true
-
-# Workflow graph (DAG) generation
-dag:
-  # Generate `dag.pdf` on each build?
-  render: false
-
 # Externally-hosted datasets, e.g. on Zenodo
 datasets:
   10.5281/zenodo.10844520:
@@ -16,12 +8,6 @@ datasets:
 dependencies:
   src/scripts/fit-and-plot.py:
     - src/data/my-latest-greatest-data.txt
-
-# Name of the `.tex` manuscript and corresponding `.pdf` article
-ms_name: ms
-
-# Optimize DAG by removing unnecessary jobs upstream of cache hits?
-optimize_caching: false
 
 # Overleaf sync settings
 overleaf:
@@ -38,12 +24,6 @@ overleaf:
     - src/tex/ms.tex
     - src/tex/bib.bib
 
-# Always require all input files to be present on disk for workflow to pass?
-require_inputs: true
-
-# Allow cacheable rules to run on GitHub Actions?
-run_cache_rules_on_ci: false
-
 # Mapping of script file extensions to instructions for executing them
 scripts:
   py: python {script}
@@ -52,21 +32,6 @@ scripts:
 stamp:
   # Show the stamp?
   enabled: false
-
-# Enable SyncTeX?
-synctex: True
-
-# Command-line options to be passed to tectonic when building the manuscript
-tectonic_args: []
-
-# Preprocessing script for arXiv tarball
-# (such as to switch `minted` from `finalizecache` to `frozencache`)
-# The script will be passed a directory containing the manuscript source
-# as input, and should modify the contents of that directory in-place.
-# preprocess_arxiv_script: my_preprocess_script.sh
-
-# Enable verbose output?
-verbose: false
 
 # Version of `showyourwork` used to create this workflow
 version: 0.4.3
