@@ -5,36 +5,17 @@ cache_on_zenodo: true
 dag:
   # Generate `dag.pdf` on each build?
   render: false
-  # Graphviz layout engine
-  engine: sfdp
-  # Group files by type into plates?
-  group_by_type: false
-  # Custom graph attributes
-  graph_attr:
-    ranksep: "1"
-    nodesep: "0.65"
-  # Custom node attributes
-  node_attr:
-    shape: "box"
-    penwidth: "2"
-    width: "1"
-  # Files and glob patterns to ignore
-  # ignore_files:
-  #  - src/tex/orcid-ID.png
-
 
 # Externally-hosted datasets, e.g. on Zenodo
 datasets:
-  # 10.5281/zenodo.6468327:
-  #   contents:
-  #     TOI640b.json: src/data/TOI640b.json
+  10.5281/zenodo.10844520:
+    contents:
+      my-latest-greatest-data.txt: src/data/my-latest-greatest-data.txt
 
 # Custom file dependencies
 dependencies:
-  # src/scripts/my_script.py:
-  #   - src/data/dataset_for_my_script.dat
-  # src/tex/ms.tex:
-  #   - src/tex/stylesheet.tex
+  src/scripts/fit-and-plot.py:
+    - src/data/my-latest-greatest-data.txt
 
 # Name of the `.tex` manuscript and corresponding `.pdf` article
 ms_name: ms
@@ -70,21 +51,7 @@ scripts:
 # Display of the `showyourwork` stamp on first page
 stamp:
   # Show the stamp?
-  enabled: true
-  # Stamp angle in degrees
-  angle: -20.0
-  # Stamp size in inches
-  size: 0.75
-  # Horizontal position in inches from right edge of paper
-  xpos: 0.50
-  # Vertical position in inches from top edge of paper
-  ypos: 0.50
-  # Display of the repo URL in the stamp
-  url:
-    # Show the URL?
-    enabled: true
-    # Maximum URL length to display
-    maxlen: 40
+  enabled: false
 
 # Enable SyncTeX?
 synctex: True
@@ -103,3 +70,11 @@ verbose: false
 
 # Version of `showyourwork` used to create this workflow
 version: 0.4.3
+
+margin_icons:
+    colors:
+        cache: "0.25,0.25,0.25"
+        dataset: "0.25,0.25,0.25"
+        github: "0.25,0.25,0.25"
+        sandbox: "0.25,0.25,0.25"
+    horizontal_offset: -4
