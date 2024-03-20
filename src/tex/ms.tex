@@ -1,15 +1,25 @@
 % Define document class
-\documentclass[twocolumn]{aastex631}
+\documentclass[reprint,superscriptaddress,nobibnotes,amsmath,amssymb,aps,hidelinks]{revtex4-2}
 \usepackage{showyourwork}
-
-% Begin!
+\usepackage[version=4]{mhchem}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{siunitx}
+\sisetup{list-units=bracket,
+         list-final-separator={, and },
+         range-units=bracket,
+         range-phrase={, },
+         uncertainty-mode=separate
+         }
 \begin{document}
 
-% Title
-\title{An open source scientific article}
+\title{My Amazing Reproducible Publication}
 
-% Author list
-\author{@arm61}
+\author{Andrew R. McCluskey}
+\email{andrew.mccluskey@bristol.ac.uk}
+  \affiliation{Centre for Computational Chemsitry, School of Chemistry, University of Bristol, Cantock's Close, Bristol, BS8 1TS, UK}
+  \affiliation{European Spallation Source ERIC, Ole Maaløes vej 3, 2200 København N, DK}
+  \affiliation{Diamond Light Source, Harwell Campus, Didcot, OX11 0DE, UK}
 
 % Abstract with filler text
 \begin{abstract}
@@ -26,6 +36,8 @@
     Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam.
     Duis eget orci sit amet orci dignissim rutrum.
 \end{abstract}
+
+\maketitle
 
 % Main body with filler text
 \section{Introduction}
