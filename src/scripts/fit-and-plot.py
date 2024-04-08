@@ -12,7 +12,7 @@ intercept, gradient = beta
 
 fig, ax = plt.subplots(figsize=(6, 4))
 ax.errorbar(x, y, yerr, marker='.', ls='', color='k')
-ax.plot(x, gradient * x + intercept, ls='-', color='g')
+ax.plot(x, gradient * x + intercept, ls='--', color='r')
 ax.set_ylabel('$y$')
 ax.set_xlabel('$x$')
 fig.savefig(paths.figures / 'my_plot.pdf')
